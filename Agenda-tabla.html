@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>T3-AgendaTabla</title>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+   function crearTablaAmigos() {
+        var amigos=[{nombre:"Pepe", apellido:"Pérez"},
+                    {nombre:"Elena", apellido:"Nito"},
+                    {nombre:"Dolores", apellido:"Fuertes"}];
+
+    let tabla=document.createElement("table");
+        tabla.id="tabla";
+        document.body.appendChild(tabla);
+
+    let nombre=document.createElement("td");
+    let apellido=document.createElement("td");
+    let fila=document.createElement("tr");
+
+    for (var i = 0; i < amigos.length; i++) {
+        document.getElementsByTagName("table")[0].appendChild(fila);
+        nombre.innerHTML=amigos[i].nombre;
+        document.getElementsByTagName("tr")[i].appendChild(nombre);
+        apellido.innerHTML=amigos[i].apellido;
+        document.getElementsByTagName("tr")[i].appendChild(apellido);
+        fila=document.createElement("tr");
+        nombre=document.createElement("td");
+        apellido=document.createElement("td");
+        }
+    }
+</script>
+<style>
+    #tabla{
+        border: 2px solid blue;
+    }
+</style>
+</head>
+<body onload="crearTablaAmigos();">
+   <div id="contenedor_amigos">
+   </div>
+</body>
+</html>
